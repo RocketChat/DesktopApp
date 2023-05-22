@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+import { appMode } from '../app/reducers/appMode';
 import { appPath } from '../app/reducers/appPath';
 import { appVersion } from '../app/reducers/appVersion';
 import { downloads } from '../downloads/reducers/downloads';
@@ -41,6 +42,7 @@ import {
 export const rootReducer = combineReducers({
   allowedJitsiServers,
   appPath,
+  appMode,
   appVersion,
   clientCertificates,
   currentView,

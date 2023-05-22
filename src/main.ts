@@ -6,7 +6,7 @@ import {
   mergePersistableValues,
   watchAndPersistChanges,
 } from './app/main/data';
-import { setUserDataDirectory } from './app/main/dev';
+import { setUserDataDirectory, DevelopmentMode } from './app/main/dev';
 import { setupDeepLinks, processDeepLinksInArgs } from './deepLinks/main';
 import { setupDownloads } from './downloads/main';
 import { setupMainErrorHandling } from './errors';
@@ -39,6 +39,10 @@ import {
 electronDl({ saveAs: true });
 
 const start = async (): Promise<void> => {
+  if (DevelopmentMode.isDevelopment()) {
+    await DevelopmentMode.setupServer();
+  }
+
   setUserDataDirectory();
 
   performElectronStartup();
@@ -58,15 +62,12 @@ const start = async (): Promise<void> => {
 
   setupMainErrorHandling();
 
+  if (DevelopmentMode.isDevelopment()) {
+    await DevelopmentMode.installDevTools();
+  }
   createRootWindow();
   attachGuestWebContentsEvents();
   await showRootWindow();
-
-  // React DevTools is currently incompatible with Electron 10
-  // if (process.env.NODE_ENV === 'development') {
-  //   installDevTools();
-  // }
-
   setupNotifications();
   setupScreenSharing();
   startVideoCallWindowHandler();

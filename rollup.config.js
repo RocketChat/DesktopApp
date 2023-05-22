@@ -91,6 +91,9 @@ export default [
     plugins: [
       json(),
       replace({
+        'process.env.ELECTRON_WEBCLIENT_PORT': JSON.stringify(
+          process.env.ELECTRON_WEBCLIENT_PORT || 4000
+        ),
         'process.env.BUGSNAG_API_KEY': JSON.stringify(
           process.env.BUGSNAG_API_KEY
         ),
@@ -109,6 +112,7 @@ export default [
     output: {
       dir: 'app',
       format: 'cjs',
+      inlineDynamicImports: true,
       sourcemap: true,
     },
   },
@@ -122,6 +126,9 @@ export default [
     plugins: [
       json(),
       replace({
+        'process.env.ELECTRON_WEBCLIENT_PORT': JSON.stringify(
+          process.env.ELECTRON_WEBCLIENT_PORT || 4000
+        ),
         'process.env.BUGSNAG_API_KEY': JSON.stringify(
           process.env.BUGSNAG_API_KEY
         ),
@@ -150,6 +157,9 @@ export default [
     plugins: [
       json(),
       replace({
+        'process.env.ELECTRON_WEBCLIENT_PORT': JSON.stringify(
+          process.env.ELECTRON_WEBCLIENT_PORT || 4000
+        ),
         'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
         'preventAssignment': true,
       }),
@@ -186,6 +196,9 @@ export default [
       }),
       json(),
       replace({
+        'process.env.ELECTRON_WEBCLIENT_PORT': JSON.stringify(
+          process.env.ELECTRON_WEBCLIENT_PORT || 4000
+        ),
         'process.env.BUGSNAG_API_KEY': JSON.stringify(
           process.env.BUGSNAG_API_KEY
         ),

@@ -647,6 +647,14 @@ const createHelpMenu = createSelector(
           browserWindow.webContents.toggleDevTools();
         },
       },
+      {
+        id: 'runDevelopment',
+        label: t('menus.runDevelopment'),
+        enabled: !app.commandLine.hasSwitch('dev'),
+        click: () => {
+          relaunchApp('--dev');
+        },
+      },
       { type: 'separator' },
       {
         id: 'clearTrustedCertificates',

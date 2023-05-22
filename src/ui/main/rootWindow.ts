@@ -403,10 +403,13 @@ export const setupRootWindow = (): void => {
 export const showRootWindow = async (): Promise<void> => {
   const browserWindow = await getRootWindow();
 
-  browserWindow.loadFile(path.join(app.getAppPath(), 'app/index.html'));
-
   if (process.env.NODE_ENV === 'development') {
     setupRootWindowReload(browserWindow.webContents);
+    browserWindow.loadURL(
+      `http://localhost:${process.env.ELECTRON_WEBCLIENT_PORT}/index.html`
+    );
+  } else {
+    browserWindow.loadFile(path.join(app.getAppPath(), 'app/index.html'));
   }
 
   return new Promise((resolve) => {
@@ -435,7 +438,13 @@ export const exportLocalStorage = async (): Promise<Record<string, string>> => {
       webPreferences,
     });
 
-    tempWindow.loadFile(path.join(app.getAppPath(), 'app/index.html'));
+    if (process.env.NODE_ENV === 'development') {
+      tempWindow.loadURL(
+        `http://localhost:${process.env.ELECTRON_WEBCLIENT_PORT}/index.html`
+      );
+    } else {
+      tempWindow.loadFile(path.join(app.getAppPath(), 'app/index.html'));
+    }
 
     await new Promise<void>((resolve) => {
       tempWindow.addListener('ready-to-show', () => {

@@ -14,7 +14,10 @@ import { UpdateDialog } from '../UpdateDialog';
 import { GlobalStyles, Wrapper, WindowDragBar, ViewsWrapper } from './styles';
 
 export const Shell: FC = () => {
-  const appPath = useSelector(({ appPath }: RootState) => appPath);
+  const [appPath, appMode] = useSelector(({ appPath, appMode }: RootState) => [
+    appPath,
+    appMode,
+  ]);
 
   useLayoutEffect(() => {
     if (!appPath) {
@@ -23,13 +26,16 @@ export const Shell: FC = () => {
 
     const linkElement = document.createElement('link');
     linkElement.rel = 'stylesheet';
-    linkElement.href = `${appPath}/app/icons/rocketchat.css`;
+    linkElement.href =
+      appMode === 'development'
+        ? `/icons/rocketchat.css`
+        : `${appPath}/app/icons/rocketchat.css`;
     document.head.append(linkElement);
 
     return () => {
       linkElement.remove();
     };
-  }, [appPath]);
+  }, [appPath, appMode]);
 
   return (
     <>
