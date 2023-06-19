@@ -72,7 +72,9 @@
       "newVersion": "New Version:",
       "install": "Install Update",
       "remindLater": "Remind Me Later",
-      "skip": "Skip This Version"
+      "skip": "Skip This Version",
+      "deprecatedOSTitle": "Unsupported Operating System",
+      "deprecatedWindowsVersion": "Please be aware that the upcoming update is no longer compatible with your current operating system. While the application may continue to function, we regret to inform you that support for your operating system will not be available in the upcoming update. Kindly consider this limitation before proceeding with the update."
     },
     "updateDownloading": {
       "title": "Downloading Update",

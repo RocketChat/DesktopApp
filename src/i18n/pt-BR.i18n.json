@@ -72,7 +72,9 @@
       "newVersion": "Nova Versão:",
       "install": "Instalar Atualização",
       "remindLater": "Lembrar Depois",
-      "skip": "Pular Versão"
+      "skip": "Pular Versão",
+      "deprecatedOSTitle": "Sistema Operacional Não Suportado",
+      "deprecatedWindowsVersion": "Por favor, esteja ciente de que a próxima atualização não é mais compatível com o seu sistema operacional atual. Embora o aplicativo possa continuar funcionando, lamentamos informar que o suporte para o seu sistema operacional não estará disponível na próxima atualização. Por favor, leve em consideração essa limitação antes de prosseguir com a atualização."
     },
     "updateDownloading": {
       "title": "Baixando atualização",
