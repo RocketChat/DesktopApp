@@ -126,7 +126,7 @@
     "npm-run-all": "~4.1.5",
     "patch-package": "~8.0.0",
     "prettier": "~3.2.5",
-    "puppeteer": "~21.7.0",
+    "puppeteer": "23.1.1",
     "rollup": "~4.9.6",
     "rollup-plugin-copy": "~3.5.0",
     "ts-jest": "~29.1.4",
@@ -138,19 +138,19 @@
     "fsevents": "2.3.3"
   },
   "engines": {
-    "node": ">=20.10.0"
+    "node": ">=20.14.0"
   },
   "devEngines": {
-    "node": ">=20.10.0",
-    "yarn": ">=4.0.2"
+    "node": ">=20.14.0",
+    "yarn": "4.4.0"
   },
   "resolutions": {
     "@fiahfy/icns-convert/sharp": "0.29.3",
     "@fiahfy/ico-convert/sharp": "0.29.3"
   },
   "volta": {
-    "node": "20.10.0",
-    "yarn": "4.0.2"
+    "node": "20.14.0",
+    "yarn": "4.4.0"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.4.0"
 }

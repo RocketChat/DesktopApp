@@ -30,10 +30,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node 21.7.1
+      - name: Setup Node 20.14.0
         uses: actions/setup-node@v4
         with:
-          node-version: '21.7.1'
+          node-version: '20.14.0'
 
       - name: Setup node_modules cache
         uses: actions/cache@v4
