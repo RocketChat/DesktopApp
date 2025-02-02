@@ -97,6 +97,10 @@
     "createStartMenuShortcut": true,
     "menuCategory": false
   },
+  "msi":{
+    "runAfterFinish": true,
+    "createStartMenuShortcut": true 
+  },
   "appx": {
     "backgroundColor": "#2f343d",
     "languages": ["en-US", "en-GB", "pt-BR"],
